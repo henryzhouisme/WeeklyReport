@@ -60,7 +60,7 @@ where $M_{SP}$ is the rotation matrix and the $O_{L}$ is the local origin.
 Adopting the circle curve function to the `eqn1`, the result is:  
 
 <center>
-$\Vert M_{SP}\cdot AttachPoint^{l}_{a}+LengthSlave_{a}\cdot cos(\theta)\cdot M_{  SP}\cdot \vec{a}+LengthSlave_{b}\cdot sin(\theta)\cdot M_{SP}\cdot \vec{b}+O_{L}-AttachPoint^{g}_{b} \Vert-LengthSlave_b==0$ 
+$\Vert M_{SP}\cdot AttachPoint^{l}_{a}+LengthSlave_{a}\cdot cos(\theta)\cdot M_{  SP}\cdot \vec{a}+LengthSlave_{a}\cdot sin(\theta)\cdot M_{SP}\cdot \vec{b}+O_{L}-AttachPoint^{g}_{b} \Vert-LengthSlave_b==0$ 
 </center>
 
 <!-- To expand this equation, it is:  
@@ -77,13 +77,13 @@ $A=\Vert M_{SP}\cdot AttachPoint^{l}_{a}+O_{L}-AttachPoint^{g}_{b}\Vert^2-Length
 
 $B=LengthSlave_a^2\cdot \Vert M_{SP}\cdot \vec{a} \Vert^2$  
 
-$C=LengthSlave_b^2\cdot \Vert M_{SP}\cdot \vec{b} \Vert^2$  
+$C=LengthSlave_a^2\cdot \Vert M_{SP}\cdot \vec{b} \Vert^2$  
 
 $D=2\cdot LengthSlave_a\cdot (M_{SP}\cdot AttachPoint^{l}_{a}+O_{L}-AttachPoint^{g}_{b})'\cdot M_{SP}\cdot \vec{a}$  
 
-$E=2\cdot LengthSlave_b\cdot (M_{SP}\cdot AttachPoint^{l}_{a}+O_{L}-AttachPoint^{g}_{b})'\cdot M_{SP}\cdot \vec{b}$
+$E=2\cdot LengthSlave_a\cdot (M_{SP}\cdot AttachPoint^{l}_{a}+O_{L}-AttachPoint^{g}_{b})'\cdot M_{SP}\cdot \vec{b}$
 
-$F=2\cdot LengthSlave_a\cdot LengthSlave_b\cdot M_{SP}\cdot \vec{a}\cdot M_{SP}\cdot \vec{b}$
+$F=2\cdot LengthSlave_a\cdot LengthSlave_a\cdot M_{SP}\cdot \vec{a}\cdot M_{SP}\cdot \vec{b}$
 
 With the help of `MATLAB`, the result of this equation is $\theta=2*arctan(\alpha)$ where $\alpha$ should meet these conditions:  
 
@@ -91,7 +91,7 @@ With the help of `MATLAB`, the result of this equation is $\theta=2*arctan(\alph
 $eqn.2: A+B+D+2 E\cdot \alpha+2F\cdot \alpha+2A\cdot \alpha^2 + A\cdot \alpha^4 + B\cdot \alpha^4 + 4 C\cdot \alpha^2 + 2 E\cdot \alpha^3 == D\cdot \alpha^4 + 2 F\cdot \alpha^3 + 2 B\cdot \alpha^2$
 </center>
 
-Transfroming to a standard formation, $Con.2$ can be put as:
+Transfroming to a standard formation, $eqn.2$ can be put as:
 
 <center>
 $eqn.2.1: M\cdot \alpha^4+N\cdot \alpha^3+P\cdot \alpha^2+Q\cdot \alpha^1+T==0$
