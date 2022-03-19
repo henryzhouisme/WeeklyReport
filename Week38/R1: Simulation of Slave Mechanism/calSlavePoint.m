@@ -1,5 +1,5 @@
 %% Program note is put here
-% https://github.com/henryzhouisme/WeeklyReport/blob/30e77833eda5c4fe5fc4a58941354f4acc707a32/Week38/R1:%20Simulation%20of%20Slave%20Mechanism/Calculate%20the%20Point%20of%20the%20Slave%20Mechanism.pdf
+% Week38/R1: Simulation of Slave Mechanism/Calculate the Point of the Slave Mechanism.pdf
 
 function slavePointG=calSlavePoint...
          (attachAPointL,attachBPointG,lengthASlave,lengthBSlave,rotaVecAL,bodya)
@@ -23,14 +23,14 @@ function slavePointG=calSlavePoint...
 	OZ=cross(bodya(2,:)'-bodya(1,:)',bodya(3,:)'-bodya(1,:)');
 	OZ=OZ/norm(OZ);
 	OY=cross(OZ,OX);
-	M=[OX,OY,OZ]; %	slavePointG=M*slavePointL+O
+	Msp=[OX,OY,OZ]; % slavePointG=M*slavePointL+O
 
-    A=norm(M*attachAPointL+O-attachBPointG)^2-lengthBSlave^2;
-    B=lengthASlave^2*norm(M*veca)^2;
-    C=lengthBSlave^2*norm(M*vecb)^2;
-    D=2*lengthASlave*(M*attachAPointL+O-attachBPointG)'*M*veca;
-    E=2*lengthBSlave*(M*attachAPointL+O-attachBPointG)'*M*vecb;
-    F=2*lengthASlave*lengthBSlave*(M*veca)'*(M*vecb);
+    A=norm(Msp*attachAPointL+O-attachBPointG)^2-lengthBSlave^2;
+    B=lengthASlave^2*norm(Msp*veca)^2;
+    C=lengthASlave^2*norm(Msp*vecb)^2;
+    D=2*lengthASlave*(Msp*attachAPointL+O-attachBPointG)'*Msp*veca;
+    E=2*lengthASlave*(Msp*attachAPointL+O-attachBPointG)'*Msp*vecb;
+    F=2*lengthASlave*lengthASlave*(Msp*veca)'*(Msp*vecb);
 
     M=A+B-D;
     N=2*E-2*F;
